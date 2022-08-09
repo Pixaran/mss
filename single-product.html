@@ -120,12 +120,11 @@
               <p>Proin cPommodo, diam a ultricies sagittis, erat odio rhoncus metus, eu feugiat lorem lacus aliquet arcu. Curabitur in gravida nisi, non placerat nibh. Praesent sit amet diam ultrices, commodo turpis id, dignissim leo. Suspendisse mauris massa, porttitor non fermentum vel, ullamcorper scelerisque velit. </p>
               <span>on stock</span>
              
-                <label for="quantity">Quantity:</label>
-                <input name="quantity" type="quantity" class="quantity-text" id="quantity" 
-                	onfocus="if(this.value == '1') { this.value = ''; }" 
-                    onBlur="if(this.value == '') { this.value = '1';}"
-                    value="1">
- <button class="button" data-modal="modalOne">Enquire Now     <a><i class="fa fa-whatsapp"></i></a></button>
+                <label for="quantity">Product ID</label>
+                <input name="quantity" class="quantity-text"
+                type="text" value="AB112" id="myInput">
+				<button class="button3" onclick="myFunction()">Copy</button>
+ <button class="button" data-modal="modalOne">Enquire Now   <a><i class="fa fa-whatsapp"></i></a></button>
 				    <div id="modalOne" class="modal">
       <div class="modal-content">
         <div class="contact-form">
@@ -136,6 +135,12 @@
       </div>
     </div>
     <script>
+	  function myFunction() {
+    var copyText = document.getElementById("myInput");
+    copyText.select();
+    document.execCommand("Copy");
+    alert("Copied the product ID you can now paste in enquiery form");
+  }
       let modalBtns = [...document.querySelectorAll(".button")];
       modalBtns.forEach(function(btn) {
         btn.onclick = function() {
